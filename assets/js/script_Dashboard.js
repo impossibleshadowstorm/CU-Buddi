@@ -62,3 +62,26 @@ const toggleButton = document.querySelector('.dark-light');
 toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('light-mode');
 });
+
+
+//It will show only coressponding Data related to field 
+$("#Worksheet-only").click(function () {
+    $("#Assignment-data").hide();
+    $("#Worksheet-data").show();
+    $("#Announcement-data").hide();
+});
+$("#Assignment-only").click(function () {
+    $("#Worksheet-data").hide();
+    $("#Assignment-data").show();
+    $("#Announcement-data").hide();
+});
+$("#Announcement-only").click(function () {
+    $("#Assignment-data").hide();
+    $("#Announcement-data").show();
+    $("#Worksheet-data").hide();
+});
+$("#All-data").click(function () {
+    $("#Assignment-data").show();
+    $("#Announcement-data").show();
+    $("#Worksheet-data").show();
+});
