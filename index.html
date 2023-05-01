@@ -3,20 +3,20 @@
 
 <head>
   <title>CU Buddi </title>
-  <link rel="stylesheet" type="text/css" href="index_style.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/index_style.css">
 </head>
 
 <body>
   <h2>Welcome to CU Buddi</h2>
   <div class="container" id="container">
     <div class="form-container sign-up-container">
-      <form action="#">
+      <form action="Student.html" onsubmit="loginStudents()">
         <h1>Student Panel</h1>
         <br>
         <br>
-        <input type="text" placeholder="CR Identifier" />
+        <input type="text" id="crUID" placeholder="CR Identifier" required />
         <br>
-        <button>Let's See</button>
+        <button onclick="loginStudents()">Let's See</button>
       </form>
     </div>
     <div class="form-container sign-in-container">
@@ -24,7 +24,7 @@
         <h1>CR Panel</h1>
         <br>
         <br>
-        <br>
+        <span id="invalid_msg"></span>
         <input type="text" id="uid" placeholder="UID" />
         <input type="password" id="password" placeholder="Password" />
         <a href="#">Forgot your password?</a>
@@ -56,6 +56,9 @@
     const signInButton = document.getElementById('signIn');
     const container = document.getElementById('container');
 
+    localStorage.removeItem("uid");
+    localStorage.removeItem("code");
+
     signUpButton.addEventListener('click', () => {
       container.classList.add("right-panel-active");
     });
@@ -65,8 +68,8 @@
     });
   </script>
 
-  <script src="assets/firebase.js" defer></script>
-  <script src="assets/authenticate.js" defer></script>
+  <script src="assets/js/firebase.js" defer></script>
+  <script src="assets/js/authenticate.js" defer></script>
   <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore-compat.js"></script>
 </body>
