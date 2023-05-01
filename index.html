@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CU Buddi </title>
+  <link rel="stylesheet" type="text/css" href="index_style.css">
+</head>
+
+<body>
+  <h2>Welcome to CU Buddi</h2>
+  <div class="container" id="container">
+    <div class="form-container sign-up-container">
+      <form action="#">
+        <h1>Student Panel</h1>
+        <br>
+        <br>
+        <input type="text" placeholder="CR Identifier" />
+        <br>
+        <button>Let's See</button>
+      </form>
+    </div>
+    <div class="form-container sign-in-container">
+      <form action="#">
+        <h1>CR Panel</h1>
+        <br>
+        <br>
+        <br>
+        <input type="text" id="uid" placeholder="UID" />
+        <input type="password" id="password" placeholder="Password" />
+        <a href="#">Forgot your password?</a>
+        <button onclick="loginCR()">Go</button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>A CR?</h1>
+          <p>This isn't your place. Click below CR.</p>
+          <button class="ghost" id="signIn">CR Panel</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Hello, Student!</h1>
+          <p>Want to see Notifications?</p>
+          <button class="ghost" id="signUp">Student Panel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; All rights reserved 2023 @22MCA20455 </p>
+  </footer>
+
+  <script>
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => {
+      container.classList.add("right-panel-active");
+    });
+
+    signInButton.addEventListener('click', () => {
+      container.classList.remove("right-panel-active");
+    });
+  </script>
+
+  <script src="assets/firebase.js" defer></script>
+  <script src="assets/authenticate.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore-compat.js"></script>
+</body>
+
+</html>

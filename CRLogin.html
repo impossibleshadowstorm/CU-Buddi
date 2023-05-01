@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Cu buddy</title>
+    <link rel="stylesheet" type="text/css" href="Login_style.css">
+  </head>
+  <body>
+  <header>
+  <p class="lw"><u>Welcome to <a href="" id="buddy">CUBudd!</a></u></p>
+</header>
+    <div class="login-box">
+      <h1>Login</h1>
+      <form action="Post_Notice.html">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+        <input type="submit" value="Login">
+       
+       
+      </form>
+      <a href=""><label> <p id="forgot" class="fgt">Forgot Password?</p> </label>  </a>
+
+    </div>
+	
+<!--
+<script>
+  const emailInput = document.getElementById('username');
+ 
+  emailInput.addEventListener('input', function(event) {
+    const email = event.target.value;
+    const regex = /^\S+@\S+\.\S+$/;
+   
+    if (!regex.test(email)) {
+      emailInput.setCustomValidity('Invalid email address.');
+    } else {
+      emailInput.setCustomValidity('');
+    }
+  });
+</script>
+    <script>
+const form = document.querySelector('form');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+ 
+  const username = document.querySelector('#username').value;
+  const password = document.querySelector('#password').value;
+ 
+  // check if username and password are correct
+  if (username === 'asdf' && password === 'asdf') {
+    // show popup window
+    const popup = window.open('', 'login-popup', 'width=400,height=300');
+    const popupContent = `
+      <html>
+        <head>
+          <title>Login successful!</title>
+        </head>
+        <body>
+          <h1>Login successful!</h1>
+          <p>Welcome back, ${username}!</p>
+          <button onclick="window.close()">Close</button>
+        </body>
+      </html>
+    `;
+    popup.document.write(popupContent);
+  } else {
+    alert('Invalid username or password');
+  }
+});
+
+</script>
+-->
+<footer>
+      <p>&copy; All rights rerserved 2023 @22MCA20455 </p>
+</footer>
+  </body>
+</html>
