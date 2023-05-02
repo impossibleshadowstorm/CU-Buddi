@@ -888,3 +888,116 @@ body.light-mode .video-bg:before {
   background: var(--scrollbar-bg);
   border-radius: 10px;
 }
+
+
+.popup{
+  width: 320px;
+  height: wrap_content;
+  background: #fff;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,-50%)scale(0.1);
+  text-align: center;
+  padding: 20px 30px 30px;
+  color: #333;
+  visibility: hidden;
+  transition:transform 0.4s,left 0.4s;
+  
+}
+
+.popup img{
+	width:20px;
+	height:20px;
+	margin-left:95%;
+	margin-top:-30px;
+}
+
+
+.popup button{
+  width: 100%;
+  margin-top: 50px;
+  padding: 10px 0;
+  background:#6fd649 ;
+  color: #fff;
+  border: 0;
+  outline: none;
+  font-size: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+  display: inline-block;
+}
+.open-popup{
+  top: 50%;
+  visibility: visible;
+  transform: translate(-50%,-50%)scale(1);
+}
+
+
+.popup h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.popup label {
+  font-weight: bold;
+  display: block;
+}
+
+.popup input[type="text"],
+.popup input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid #333;
+}
+.popup p{
+  margin-top: 20px;
+}
+.popup input[type="submit"] {
+  width: 100%;
+  background: #245953;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup input[type="submit"]:hover {
+  background: #408E91;
+}
+
+.popup button[type="button"] {
+  width: 100%;
+  background:#0B2447;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup button[type="button"]:hover {
+  background: #19376D;
+}
+#category,
+#Qnumber,
+#course,
+#semester,
+#section,
+#group,
+#lastdate,
+#lasthour
+{
+  width: 50%;
+}
+.popup input[type="text"]:hover,
+.popup input[type="number"]:hover 
+{
+  background: #19376D;
+}

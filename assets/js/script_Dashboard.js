@@ -85,3 +85,14 @@ $("#All-data").click(function () {
     $("#Announcement-data").show();
     $("#Worksheet-data").show();
 });
+
+//PupUp
+letpopup=document.getElementById("popup")
+    function openPopup()
+    {
+      popup.classList.add("open-popup")
+    }
+     function closePopup()
+    {
+      popup.classList.remove("open-popup")
+    }

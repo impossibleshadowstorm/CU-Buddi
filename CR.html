@@ -88,8 +88,40 @@
                 CU Buddi
               </h3>
               <div class="content-text">It will help you to keep track of your coursework and stay organized.</div>
-              <button class="content-button">Add New Notice </button>
+              <button class="content-button" onclick="openPopup()">Add New Notice </button>
             </div>
+
+
+            <!--Popu Form Start -->
+          <div class="popup" id="popup">
+            <h1>Notice
+          <a href="#"> <img src="/assets/Img/icons8-close-30.png"alt="Close" onclick="closePopup()"></a></h1>
+            <form>
+              <select id="category">
+                <option value="worksheet">Worksheet</option>
+                <option value="assignment">Assignment</option>
+                <option value="announcement">Announcement</option>
+              </select>
+              <input type="number" placeholder="No." id="Qnumber" required>
+              <input placeholder="Department" type="text" id="department" required>
+              <input type="text" id="course" placeholder="Enter Course" required>
+              <input type="text" id="semester" placeholder="Current Semester" required>
+              <input type="text" id="section" placeholder="Current section" required>
+              <select id="group">
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+              </select>
+              <input type="date" placeholder="Last Date" id="lastdate" required>
+              <input type="time" placeholder="Last Hour" id="lasthour" required>
+
+              <input type="submit" value="Save" onclick="closePopup()">
+            </form>
+          </div>
+
+          <!---Popup Form End-->
+
+
+
             <img class="content-wrapper-img" src="https://assets.codepen.io/3364143/glass.png" alt="">
           </div>
           <div class="content-section">
