@@ -942,13 +942,7 @@ body.light-mode .video-bg:before {
   margin-bottom: 30px;
 }
 
-.popup label {
-  font-weight: bold;
-  display: block;
-}
-
-.popup input[type="text"],
-.popup input[type="password"] {
+.popup input[type="text"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -972,19 +966,7 @@ body.light-mode .video-bg:before {
   background: #408E91;
 }
 
-.popup button[type="button"] {
-  width: 100%;
-  background:#0B2447;
-  border: none;
-  padding: 10px;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-}
 
-.popup button[type="button"]:hover {
-  background: #19376D;
-}
 #category,
 #Qnumber,
 #course,
@@ -995,9 +977,4 @@ body.light-mode .video-bg:before {
 #lasthour
 {
   width: 50%;
-}
-.popup input[type="text"]:hover,
-.popup input[type="number"]:hover 
-{
-  background: #19376D;
 }
