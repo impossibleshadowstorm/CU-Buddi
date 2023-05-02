@@ -6,11 +6,11 @@
   <title>CodePen - A Pen by Shantalia </title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="/assets/css/style_Dashboard.css">
-
+  <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore-compat.js"></script>
 </head>
 
 <body>
-  <!-- partial:index.partial.html -->
   <div class="video-bg">
     <video width="320" height="240" autoplay loop muted>
       <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4">
@@ -94,8 +94,8 @@
           </div>
           <div class="content-section">
             <div class="content-section-title">Ongoing</div>
-            <ul>
-              <li class="adobe-product" id="Worksheet-data">
+            <ul id="wks-ongoing">
+              <!-- <li class="adobe-product" id="Worksheet-data">
                 <div class="products">
                   <span id="Subjetc">Advance Internet Programming</span>
                 </div>
@@ -151,7 +151,7 @@
                     </button>
                   </div>
                 </div>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
@@ -160,12 +160,13 @@
     <div class="overlay-app"></div>
     <div class="copyright"> &copy; All right Reserved 22MCA20455</div>
   </div>
-  <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script src="/assets/js/script_Dashboard.js"></script>
+  <script src="/assets/js/firebase.js" defer></script>
+  <script src="/assets/js/script_Dashboard.js" defer></script>
+  <script src="/assets/js/cr_dashboard.js" defer></script>
 
   <script>
-    if(localStorage.getItem("code") != "secret"){
+    if (localStorage.getItem("code") != "secret") {
       location.href = "/index.html";
     }
   </script>

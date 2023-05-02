@@ -1,25 +1,33 @@
 var uid = localStorage.getItem("uid");
 
-const crRef = firebase.firestore().collection("crs").document(uid).collection("worksheets");
+const crRef = firebase
+  .firestore()
+  .collection("crs")
+  .doc(uid)
+  .collection("worksheets");
 
 crRef.onSnapshot((querySnap) => {
-    querySnap.docs.forEach((element) => {
-      console.log(element.data()["name"]);
-      if (element.data()["uid"] == uid) {
-        if (element.data()["pass"] == pass) {
-          location.href = "/CR.html";
-          document.getElementById("invalid_msg").innerText = "";
-          localStorage.setItem("code", "secret");
-          localStorage.setItem("uid", uid);
-          return;
-        } else {
-          document.getElementById("invalid_msg").innerText =
-            "Invalid Password!!";
-        }
-      } else {
-        // invalid user and password
-        document.getElementById("invalid_msg").innerText =
-          "No Username is registered!!";
-      }
-    });
+  querySnap.docs.forEach((element) => {
+    console.log(element.data());
+    var child = `<li class="adobe-product" id="Worksheet-data">
+      <div class="products">
+        <span id="Subjetc">${element.data()["subject"]}</span>
+      </div>
+      <span class="status">
+        <span class="status-circle green"></span>
+        <span>Worksheet 3.1</span> </span>
+      <div class="button-wrapper">
+        <button class="content-button status-button open"><span>7 </span>Days Left</button>
+        <div class="menu">
+          <button class="dropdown">
+            <ul>
+              <li><a href="#">Update</a></li>
+              <li><a href="#">Delete</a></li>
+            </ul>
+          </button>
+        </div>
+      </div>
+    </li>`;
+    document.getElementById("wks-ongoing").innerHTML +=child;
   });
+});
