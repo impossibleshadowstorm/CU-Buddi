@@ -987,6 +987,7 @@ body.light-mode .video-bg:before {
   transition: transform 0.4s, left 0.4s;
   z-index: 10000;
   overflow-x: scroll;
+  overflow-y: scroll;
 }
 
 /*

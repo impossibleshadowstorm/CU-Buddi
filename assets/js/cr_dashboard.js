@@ -1,4 +1,5 @@
 var uid = localStorage.getItem("uid");
+document.getElementById("crid").innerText=uid
 
 const crRef = firebase
   .firestore()
@@ -15,7 +16,7 @@ crRef.onSnapshot((querySnap) => {
       </div>
       <span class="status">
         <span class="status-circle green"></span>
-        <span>Worksheet 3.1</span> </span>
+        <span>Worksheet${element.data()["wks_no"]}</span> </span>
       <div class="button-wrapper">
         <button class="content-button status-button open"><span>7 </span>Days Left</button>
         <div class="menu">
