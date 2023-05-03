@@ -93,10 +93,27 @@
 
 
             <!--Popu Form Start -->
-          <div class="popup" id="popup">
-            <h1>Notice
-          <a href="#"> <img src="/assets/Img/icons8-close-30.png"alt="Close" onclick="closePopup()"></a></h1>
-            <form>
+            <div class="popup" id="popup">
+              <h3 style="color: white; display: flex; justify-content: space-between; padding: 0 100px;">Add New Thread
+                &nbsp; &nbsp;
+                <a href="#" onclick="closePopup()">
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="13" height="13" viewBox="0,0,256,256"
+                    style="fill:#000000;">
+                    <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                      stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                      font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                      style="mix-blend-mode: normal">
+                      <g transform="scale(8.53333,8.53333)">
+                        <path
+                          d="M7,4c-0.25587,0 -0.51203,0.09747 -0.70703,0.29297l-2,2c-0.391,0.391 -0.391,1.02406 0,1.41406l7.29297,7.29297l-7.29297,7.29297c-0.391,0.391 -0.391,1.02406 0,1.41406l2,2c0.391,0.391 1.02406,0.391 1.41406,0l7.29297,-7.29297l7.29297,7.29297c0.39,0.391 1.02406,0.391 1.41406,0l2,-2c0.391,-0.391 0.391,-1.02406 0,-1.41406l-7.29297,-7.29297l7.29297,-7.29297c0.391,-0.39 0.391,-1.02406 0,-1.41406l-2,-2c-0.391,-0.391 -1.02406,-0.391 -1.41406,0l-7.29297,7.29297l-7.29297,-7.29297c-0.1955,-0.1955 -0.45116,-0.29297 -0.70703,-0.29297z">
+                        </path>
+                      </g>
+                    </g>
+                  </svg>
+                  <!-- <img src="/assets/Img/icons8-close-30.png" alt="Close" onclick="closePopup()"> -->
+                </a>
+              </h3>
+              <!-- <form>
               <select id="category">
                 <option value="worksheet">Worksheet</option>
                 <option value="assignment">Assignment</option>
@@ -115,10 +132,136 @@
               <input type="time" placeholder="Last Hour" id="lasthour" required>
 
               <input type="submit" value="Save" onclick="closePopup()">
-            </form>
-          </div>
+            </form> -->
 
-          <!---Popup Form End-->
+              <form action='' class='form'>
+
+                <div class='field'>
+                  <ul class='options'>
+                    <label class='label label-center'>Thread Type</label>
+                    <div>
+                      <li class='option'>
+                        <input class='option-input' id='wks-radio' name='thread-type' type='radio' value='0' checked>
+                        <label class='option-label' for='wks-radio'>Worksheet</label>
+                      </li>
+                      <li class='option'>
+                        <input class='option-input' id='assignment-radio' name='thread-type' type='radio' value='1'>
+                        <label class='option-label' for='assignment-radio'>Assignment</label>
+                      </li>
+                      <li class='option'>
+                        <input class='option-input' id='announcement-radio' name='thread-type' type='radio' value='2'>
+                        <label class='option-label' for='announcement-radio'>Announcement</label>
+                      </li>
+                    </div>
+                  </ul>
+                </div>
+                <p class='field required' id="wks-subject-box">
+                  <!-- <label class='label required' for='name'>Full name</label> -->
+                  <input class='text-input' id='wks-subject' name='wks-subject' placeholder="Subject" required
+                    type='text'>
+                </p>
+                <p class='field required half' id="wks-no-box">
+                  <!-- <label class='label' for='email'>E-mail</label> -->
+                  <input class='text-input' id='wks-no' name='wks-no' placeholder="Worksheet Number" required
+                    type='email'>
+                </p>
+                <p class='field half' id="dead-date-box">
+                  <!-- <label class='label' for='phone'>Phone</label> -->
+                  <input class='text-input' id='wks-dead-date' name='wks-dead-date' type='datetime-local'
+                    placeholder="Deadline Date">
+                </p>
+                <!-- <p class='field half required error'>
+                  <label class='label' for='login'>Login</label>
+                  <input class='text-input' id='login' name='login' required type='text' value='mican'>
+                </p>
+                <p class='field half required'>
+                  <label class='label' for='password'>Password</label>
+                  <input class='text-input' id='password' name='password' required type='password'>
+                </p> -->
+                <!-- <div class='field'>
+                  <label class='label'>Sport?</label>
+                  <ul class='checkboxes'>
+                    <li class='checkbox'>
+                      <input class='checkbox-input' id='choice-0' name='choice' type='checkbox' value='0'>
+                      <label class='checkbox-label' for='choice-0'>Foohtball</label>
+                    </li>
+                    <li class='checkbox'>
+                      <input class='checkbox-input' id='choice-1' name='choice' type='checkbox' value='1'>
+                      <label class='checkbox-label' for='choice-1'>Basketball</label>
+                    </li>
+                    <li class='checkbox'>
+                      <input class='checkbox-input' id='choice-2' name='choice' type='checkbox' value='2'>
+                      <label class='checkbox-label' for='choice-2'>Volleyball</label>
+                    </li>
+                    <li class='checkbox'>
+                      <input class='checkbox-input' id='choice-3' name='choice' type='checkbox' value='3'>
+                      <label class='checkbox-label' for='choice-3'>Golf</label>
+                    </li>
+                    <li class='checkbox'>
+                      <input class='checkbox-input' id='choice-4' name='choice' type='checkbox' value='4'>
+                      <label class='checkbox-label' for='choice-4'>Swimming</label>
+                    </li>
+                  </ul>
+                </div> -->
+                <!-- <div class='field'>
+                  <label class='label'>Favourite JS framework</label>
+                  <ul class='options'>
+                    <li class='option'>
+                      <input class='option-input' id='option-0' name='option' type='radio' value='0'>
+                      <label class='option-label' for='option-0'>React</label>
+                    </li>
+                    <li class='option'>
+                      <input class='option-input' id='option-1' name='option' type='radio' value='1'>
+                      <label class='option-label' for='option-1'>Vue</label>
+                    </li>
+                    <li class='option'>
+                      <input class='option-input' id='option-2' name='option' type='radio' value='2'>
+                      <label class='option-label' for='option-2'>Angular</label>
+                    </li>
+                    <li class='option'>
+                      <input class='option-input' id='option-3' name='option' type='radio' value='3'>
+                      <label class='option-label' for='option-3'>Riot</label>
+                    </li>
+                    <li class='option'>
+                      <input class='option-input' id='option-4' name='option' type='radio' value='4'>
+                      <label class='option-label' for='option-4'>Polymer</label>
+                    </li>
+                    <li class='option'>
+                      <input class='option-input' id='option-5' name='option' type='radio' value='5'>
+                      <label class='option-label' for='option-5'>Ember</label>
+                    </li>
+                    <li class='option'>
+                      <input class='option-input' id='option-6' name='option' type='radio' value='6'>
+                      <label class='option-label' for='option-6'>Meteor</label>
+                    </li>
+                    <li class='option'>
+                      <input class='option-input' id='option-7' name='option' type='radio' value='7'>
+                      <label class='option-label' for='option-7'>Knockout</label>
+                    </li>
+                  </ul>
+                </div> -->
+                <p class='field'>
+                  <label class='label' for='about' id="wks-note">Any Note</label>
+                  <textarea class='textarea' cols='50' id='about' name='about' rows='4'></textarea>
+                </p>
+                <!-- <p class='field half'>
+                  <label class='label' for='select'>Position</label>
+                  <select class='select' id='select'>
+                    <option selected value=''></option>
+                    <option value='ceo'>CEO</option>
+                    <option value='front-end'>Front-end developer</option>
+                    <option value='back-end'>Back-end developer</option>
+                  </select>
+                </p> -->
+                <p class="field half" id="current-date-time"></p>
+                <p class='field half'>
+                  <input class='button' type='submit' value='Send'>
+                </p>
+              </form>
+
+            </div>
+
+            <!---Popup Form End-->
 
 
 
@@ -201,6 +344,38 @@
     if (localStorage.getItem("code") != "secret") {
       location.href = "/index.html";
     }
+
+    var dt = new Date();
+    document.getElementById('current-date-time').innerHTML = dt;
+
+    function handleRadioClick() {
+      if (document.getElementById("wks-radio").checked) {
+        document.getElementById("wks-note").innerText = "Any Note";
+        document.getElementById("wks-no").placeholder = "Worksheet Number";
+        document.getElementById("wks-no-box").style.display = "block";
+        document.getElementById("wks-no-box").style.display = "block";
+        document.getElementById("wks-subject-box").style.display = "block";
+        document.getElementById("dead-date-box").style.width = "50%";
+      }
+      else if (document.getElementById("assignment-radio").checked) {
+        document.getElementById("wks-note").innerText = "Any Note";
+        document.getElementById("wks-no").placeholder = "Assignment Number";
+        document.getElementById("wks-no-box").style.display = "block";
+        document.getElementById("wks-subject-box").style.display = "block";
+        document.getElementById("dead-date-box").style.width = "50%";
+      } else if (document.getElementById("announcement-radio").checked) {
+        document.getElementById("wks-note").innerText = "Notice";
+        document.getElementById("wks-no-box").style.display = "none";
+        document.getElementById("wks-subject-box").style.display = "none";
+        document.getElementById("dead-date-box").style.width = "100%";
+      }
+    }
+
+
+    const radioButtons = document.querySelectorAll('input[name="thread-type"]');
+    radioButtons.forEach(radio => {
+      radio.addEventListener('click', handleRadioClick);
+    });
   </script>
 
 </body>
