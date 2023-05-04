@@ -30,7 +30,7 @@
         <a class="menu-link is-active" href="#"> <span id="crid"></span> </a>
 
       </div>
-      
+
       <!--<div class="search-bar">
         <input type="text" placeholder="Search">
       </div>-->
@@ -54,18 +54,11 @@
         <div class="side-wrapper">
           <div class="side-title">Categories</div>
           <div class="side-menu">
-            <a href="#" id="Worksheet-only">
-
-              Worksheet
-            </a>
-            <a href="#" id="Assignment-only">
-
-              Assignment
-            </a>
-            <a href="#" id="Announcement-only">
-
-              Announcement
-            </a>
+            <a href="#" id="Worksheet-only" class="side-menu-inner side-menu-active"
+              onclick="getAllTiles('worksheets')">Worksheet</a>
+            <a href="#" class="side-menu-inner" id="Assignment-only" onclick="getAllTiles('assignments')">Assignment</a>
+            <a href="#" class="side-menu-inner" id="Announcement-only"
+              onclick="getAllTiles('announcements')">Announcement</a>
             <a href="#">
               Help?
             </a>
@@ -93,7 +86,7 @@
             </div>
 
 
-            <!--Popu Form Start -->
+            <!--Popup Form Start -->
             <div class="popup" id="popup">
               <h3 style="color: white; display: flex; justify-content: space-between; padding: 0 100px;">Add New Thread
                 &nbsp; &nbsp;
@@ -162,14 +155,16 @@
                     type='text'>
                 </p>
                 <p class='field required half' id="wks-no-box">
-                  <!-- <label class='label' for='email'>E-mail</label> -->
                   <input class='text-input' id='wks-no' name='wks-no' placeholder="Worksheet Number" required
-                    type='email'>
+                    type='text'>
+                </p>
+                <p class='field required half' id="wks-notice-heading-box">
+                  <input class='text-input' id='wks-notice-heading' name='wks-notice-heading'
+                    placeholder="Notice Heading" required type='text'>
                 </p>
                 <p class='field half' id="dead-date-box">
-                  <!-- <label class='label' for='phone'>Phone</label> -->
                   <input class='text-input' id='wks-dead-date' name='wks-dead-date' type='datetime-local'
-                    placeholder="Deadline Date">
+                    placeholder="Deadline Date" required>
                 </p>
                 <!-- <p class='field half required error'>
                   <label class='label' for='login'>Login</label>
@@ -254,7 +249,7 @@
                     <option value='back-end'>Back-end developer</option>
                   </select>
                 </p> -->
-                <p class="field half" id="current-date-time"></p>
+                <!-- <p class="field half" id="current-date-time"></p> -->
                 <p class='field half'>
                   <input class='button' type='submit' value='Send'>
                 </p>
@@ -263,8 +258,6 @@
             </div>
 
             <!---Popup Form End-->
-
-
 
             <img class="content-wrapper-img" src="https://assets.codepen.io/3364143/glass.png" alt="">
           </div>
@@ -347,32 +340,38 @@
     }
 
     var dt = new Date();
-    document.getElementById('current-date-time').innerHTML = dt;
+    // document.getElementById('current-date-time').innerHTML = dt;
 
     function handleRadioClick() {
+      console.log("kl")
       if (document.getElementById("wks-radio").checked) {
         document.getElementById("wks-note").innerText = "Any Note";
         document.getElementById("wks-no").placeholder = "Worksheet Number";
         document.getElementById("wks-no-box").style.display = "block";
         document.getElementById("wks-no-box").style.display = "block";
         document.getElementById("wks-subject-box").style.display = "block";
-        document.getElementById("dead-date-box").style.width = "50%";
+        document.getElementById("wks-notice-heading-box").style.display = "none";
+        // document.getElementById("dead-date-box").style.width = "50%";
       }
       else if (document.getElementById("assignment-radio").checked) {
         document.getElementById("wks-note").innerText = "Any Note";
         document.getElementById("wks-no").placeholder = "Assignment Number";
         document.getElementById("wks-no-box").style.display = "block";
         document.getElementById("wks-subject-box").style.display = "block";
-        document.getElementById("dead-date-box").style.width = "50%";
+        document.getElementById("wks-notice-heading-box").style.display = "none";
+        // document.getElementById("dead-date-box").style.width = "50%";
       } else if (document.getElementById("announcement-radio").checked) {
         document.getElementById("wks-note").innerText = "Notice";
         document.getElementById("wks-no-box").style.display = "none";
         document.getElementById("wks-subject-box").style.display = "none";
-        document.getElementById("dead-date-box").style.width = "100%";
+        document.getElementById("wks-notice-heading-box").style.display = "block";
+        document.getElementById("about").required = "true";
+        // document.getElementById("dead-date-box").style.width = "100%";
       }
     }
 
-    
+
+    document.getElementById("wks-notice-heading-box").style.display = "none";
     const radioButtons = document.querySelectorAll('input[name="thread-type"]');
     radioButtons.forEach(radio => {
       radio.addEventListener('click', handleRadioClick);
