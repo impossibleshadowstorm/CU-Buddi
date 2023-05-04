@@ -128,22 +128,22 @@
               <input type="submit" value="Save" onclick="closePopup()">
             </form> -->
 
-              <form action='' class='form'>
+              <form class='form' action="javascript:;" onsubmit="createThread()">
 
                 <div class='field'>
                   <ul class='options'>
                     <label class='label label-center'>Thread Type</label>
                     <div>
                       <li class='option'>
-                        <input class='option-input' id='wks-radio' name='thread-type' type='radio' value='0' checked>
+                        <input class='option-input' id='wks-radio' name='thread-type' type='radio' value='worksheets' checked>
                         <label class='option-label' for='wks-radio'>Worksheet</label>
                       </li>
                       <li class='option'>
-                        <input class='option-input' id='assignment-radio' name='thread-type' type='radio' value='1'>
+                        <input class='option-input' id='assignment-radio' name='thread-type' type='radio' value='assignment'>
                         <label class='option-label' for='assignment-radio'>Assignment</label>
                       </li>
                       <li class='option'>
-                        <input class='option-input' id='announcement-radio' name='thread-type' type='radio' value='2'>
+                        <input class='option-input' id='announcement-radio' name='thread-type' type='radio' value='announcement'>
                         <label class='option-label' for='announcement-radio'>Announcement</label>
                       </li>
                     </div>
@@ -151,16 +151,16 @@
                 </div>
                 <p class='field required' id="wks-subject-box">
                   <!-- <label class='label required' for='name'>Full name</label> -->
-                  <input class='text-input' id='wks-subject' name='wks-subject' placeholder="Subject" required
+                  <input class='text-input' id='wks-subject' name='wks-subject' placeholder="Subject"
                     type='text'>
                 </p>
                 <p class='field required half' id="wks-no-box">
-                  <input class='text-input' id='wks-no' name='wks-no' placeholder="Worksheet Number" required
+                  <input class='text-input' id='wks-no' name='wks-no' placeholder="Worksheet Number"
                     type='text'>
                 </p>
                 <p class='field required half' id="wks-notice-heading-box">
                   <input class='text-input' id='wks-notice-heading' name='wks-notice-heading'
-                    placeholder="Notice Heading" required type='text'>
+                    placeholder="Notice Heading" type='text'>
                 </p>
                 <p class='field half' id="dead-date-box">
                   <input class='text-input' id='wks-dead-date' name='wks-dead-date' type='datetime-local'
@@ -340,17 +340,20 @@
     }
 
     var dt = new Date();
+    handleRadioClick();
     // document.getElementById('current-date-time').innerHTML = dt;
 
     function handleRadioClick() {
-      console.log("kl")
       if (document.getElementById("wks-radio").checked) {
         document.getElementById("wks-note").innerText = "Any Note";
         document.getElementById("wks-no").placeholder = "Worksheet Number";
         document.getElementById("wks-no-box").style.display = "block";
-        document.getElementById("wks-no-box").style.display = "block";
         document.getElementById("wks-subject-box").style.display = "block";
         document.getElementById("wks-notice-heading-box").style.display = "none";
+        document.getElementById("wks-no").required = true;
+        document.getElementById("wks-subject").required = true;
+        document.getElementById("wks-notice-heading").required = false;
+        document.getElementById("about").required = false;
         // document.getElementById("dead-date-box").style.width = "50%";
       }
       else if (document.getElementById("assignment-radio").checked) {
@@ -359,13 +362,20 @@
         document.getElementById("wks-no-box").style.display = "block";
         document.getElementById("wks-subject-box").style.display = "block";
         document.getElementById("wks-notice-heading-box").style.display = "none";
+        document.getElementById("wks-no").required = true;
+        document.getElementById("wks-subject").required = true;
+        document.getElementById("wks-notice-heading").required = false;
+        document.getElementById("about").required = false;
         // document.getElementById("dead-date-box").style.width = "50%";
       } else if (document.getElementById("announcement-radio").checked) {
         document.getElementById("wks-note").innerText = "Notice";
         document.getElementById("wks-no-box").style.display = "none";
         document.getElementById("wks-subject-box").style.display = "none";
         document.getElementById("wks-notice-heading-box").style.display = "block";
-        document.getElementById("about").required = "true";
+        document.getElementById("wks-no").required = false;
+        document.getElementById("wks-subject").required = false;
+        document.getElementById("wks-notice-heading").required = true;
+        document.getElementById("about").required = true;
         // document.getElementById("dead-date-box").style.width = "100%";
       }
     }
