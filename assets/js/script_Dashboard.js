@@ -6,6 +6,12 @@ $(function () {
     });
 });
 $(function () {
+    $(".side-menu-inner").click(function () {
+        $(".side-menu-inner").removeClass("side-menu-active");
+        $(this).addClass("side-menu-active");
+    });
+});
+$(function () {
     $(".main-header-link").click(function () {
         $(".main-header-link").removeClass("is-active");
         $(this).addClass("is-active");
@@ -65,21 +71,21 @@ toggleButton.addEventListener('click', () => {
 
 
 //It will show only coressponding Data related to field 
-$("#Worksheet-only").click(function () {
-    $("#Assignment-data").hide();
-    $("#Worksheet-data").show();
-    $("#Announcement-data").hide();
-});
-$("#Assignment-only").click(function () {
-    $("#Worksheet-data").hide();
-    $("#Assignment-data").show();
-    $("#Announcement-data").hide();
-});
-$("#Announcement-only").click(function () {
-    $("#Assignment-data").hide();
-    $("#Announcement-data").show();
-    $("#Worksheet-data").hide();
-});
+// $("#Worksheet-only").click(function () {
+//     $("#Assignment-data").hide();
+//     $("#Worksheet-data").show();
+//     $("#Announcement-data").hide();
+// });
+// $("#Assignment-only").click(function () {
+//     $("#Worksheet-data").hide();
+//     $("#Assignment-data").show();
+//     $("#Announcement-data").hide();
+// });
+// $("#Announcement-only").click(function () {
+//     $("#Assignment-data").hide();
+//     $("#Announcement-data").show();
+//     $("#Worksheet-data").hide();
+// });
 $("#All-data").click(function () {
     $("#Assignment-data").show();
     $("#Announcement-data").show();
@@ -87,7 +93,7 @@ $("#All-data").click(function () {
 });
 
 //PupUp
-letpopup=document.getElementById("popup")
+let popup=document.getElementById("popup")
     function openPopup()
     {
       popup.classList.add("open-popup")

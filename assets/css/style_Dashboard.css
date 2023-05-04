@@ -402,10 +402,16 @@ body.light-mode .video-bg:before {
   font-size: 14px;
   border-radius: 6px;
   transition: 0.3s;
+  margin-bottom: 5px;
 }
 
 .side-menu a:hover {
   background-color: var(--hover-menu-bg);
+}
+
+.side-menu-active {
+  background-color: var(--hover-menu-bg);
+
 }
 
 .side-menu svg {
@@ -1312,14 +1318,14 @@ body {
   display: none;
 }
 
-.options{
+.options {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.options .label-center{
+.options .label-center {
   padding: 10px 5px;
   font-size: 0.8em;
 }
