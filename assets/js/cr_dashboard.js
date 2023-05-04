@@ -15,6 +15,16 @@ function getAllTiles(threadType) {
   if (threadType == "worksheets") {
     crRef.onSnapshot((querySnap) => {
       querySnap.docs.forEach((element) => {
+
+    //Date Calculation Start
+    const timestamp = element.data()["deadline"].seconds; 
+    
+    const now = Math.floor(Date.now()/1000);
+    const diff =now-timestamp;
+    const diffInDays = Math.abs(Math.floor(diff / (24 * 60 * 60 * 1000)));
+    console.log(diffInDays);
+    //Date Calculation End
+
         var child = `<li class="adobe-product" id="Worksheet-data">
     <div class="products">
       <span id="Subject">${element.data()["subject"]}</span>
@@ -23,7 +33,7 @@ function getAllTiles(threadType) {
       <span class="status-circle green"></span>
       <span>Worksheet ${element.data()["wks_no"]}</span> </span>
     <div class="button-wrapper">
-      <button class="content-button status-button open"><span>7 </span>Days Left</button>
+      <button class="content-button status-button open"><span>${diffInDays} </span>Days Left</button>
       <div class="menu">
         <button class="dropdown">
           <ul>
@@ -40,6 +50,16 @@ function getAllTiles(threadType) {
   } else if (threadType == "assignments") {
     crRef.onSnapshot((querySnap) => {
       querySnap.docs.forEach((element) => {
+
+        //Date Calculation Start
+    const timestamp = element.data()["deadline"].seconds; 
+    
+    const now = Math.floor(Date.now()/1000);
+    const diff =now-timestamp;
+    const diffInDays = Math.abs(Math.floor(diff / (24 * 60 * 60 * 1000)));
+    console.log(diffInDays);
+    //Date Calculation End
+
         var child = `<li class="adobe-product" id="Worksheet-data">
     <div class="products">
       <span id="Subject">${element.data()["subject"]}</span>
@@ -48,7 +68,7 @@ function getAllTiles(threadType) {
       <span class="status-circle green"></span>
       <span>Assignment ${element.data()["assignment_no"]}</span> </span>
       <div class="button-wrapper">
-      <button class="content-button status-button open"><span>7 </span>Days Left</button>
+      <button class="content-button status-button open"><span>${diffInDays} </span>Days Left</button>
     </div>
   </li>`;
         document.getElementById("wks-ongoing").innerHTML += child;
@@ -61,12 +81,22 @@ function getAllTiles(threadType) {
   else if (threadType == "announcements") {
     crRef.onSnapshot((querySnap) => {
       querySnap.docs.forEach((element) => {
+
+        //Date Calculation Start
+    const timestamp = element.data()["deadline"].seconds; 
+    
+    const now = Math.floor(Date.now()/1000);
+    const diff =now-timestamp;
+    const diffInDays = Math.abs(Math.floor(diff / (24 * 60 * 60 * 1000)));
+    console.log(diffInDays);
+    //Date Calculation End
+
         var child = `<li class="adobe-product" id="Worksheet-data">
     <div class="products">
       <span id="Subject">${element.data()["notice_heading"]}</span>
     </div>
       <div class="button-wrapper">
-      <button class="content-button status-button open"><span>7 </span>Days Left</button>
+      <button class="content-button status-button open"><span> ${diffInDays} </span>Days Left</button>
     </div>
   </li>`;
         document.getElementById("wks-ongoing").innerHTML += child;
