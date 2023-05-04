@@ -3,6 +3,57 @@ document.getElementById("crid").innerText = uid;
 
 getAllTiles("worksheets");
 
+function createThread() {
+  if (document.getElementById("wks-radio").checked) {
+    firebase
+      .firestore()
+      .collection("crs")
+      .doc(uid)
+      .collection("worksheets")
+      .add({
+        creation_time: firebase.firestore.Timestamp.fromDate(new Date()),
+        deadline: firebase.firestore.Timestamp.fromDate(
+          new Date(document.getElementById("wks-dead-date").value)
+        ),
+        subject: document.getElementById("wks-subject").value,
+        wks_no: document.getElementById("wks-no").value,
+      });
+      console.log("done");
+  }
+  else if (document.getElementById("assignment-radio").checked) {
+    firebase
+      .firestore()
+      .collection("crs")
+      .doc(uid)
+      .collection("assignments")
+      .add({
+        creation: firebase.firestore.Timestamp.fromDate(new Date()),
+        deadline: firebase.firestore.Timestamp.fromDate(
+          new Date(document.getElementById("wks-dead-date").value)
+        ),
+        subject: document.getElementById("wks-subject").value,
+        assignment_no: document.getElementById("wks-no").value,
+      });
+      console.log("done");
+  }
+  else if (document.getElementById("announcement-radio").checked) {
+    firebase
+      .firestore()
+      .collection("crs")
+      .doc(uid)
+      .collection("announcements")
+      .add({
+        creation: firebase.firestore.Timestamp.fromDate(new Date()),
+        deadline: firebase.firestore.Timestamp.fromDate(
+          new Date(document.getElementById("wks-dead-date").value)
+        ),
+        notice_heading: document.getElementById("wks-notice-heading").value,
+        notice: document.getElementById("about").value
+      });
+      console.log("done");
+  }
+}
+
 function getAllTiles(threadType) {
   const crRef = firebase
     .firestore()
@@ -57,8 +108,7 @@ function getAllTiles(threadType) {
     });
     // document.getElementById("wks-ongoing").innerHTML = finalList;
     // console.log(finalList)
-  }
-  else if (threadType == "announcements") {
+  } else if (threadType == "announcements") {
     crRef.onSnapshot((querySnap) => {
       querySnap.docs.forEach((element) => {
         var child = `<li class="adobe-product" id="Worksheet-data">
