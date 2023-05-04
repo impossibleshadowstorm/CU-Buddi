@@ -28,7 +28,7 @@
     <div class="header">
       <div class="menu-circle"></div>
       <div class="header-menu">
-        <a class="menu-link is-active" href="#">22MCA20455</a>
+        <a class="menu-link is-active" href="#"><span id="crid"></span> </a>
 
       </div>
       <div class="search-bar">
@@ -54,15 +54,15 @@
         <div class="side-wrapper">
           <div class="side-title">Categories</div>
           <div class="side-menu">
-            <a href="#" id="Worksheet-only">
+            <a href="#" id="Worksheet-only" onclick="getAllTiles('worksheets')">
 
               Worksheet
             </a>
-            <a href="#" id="Assignment-only">
+            <a href="#" id="Assignment-only"  onclick="getAllTiles('assignments')">
 
               Assignment
             </a>
-            <a href="#" id="Announcement-only">
+            <a href="#" id="Announcement-only" onclick="getAllTiles('announcements')">
 
               Announcement
             </a>
@@ -73,20 +73,12 @@
         </div>
       </div>
       <div class="main-container">
-        <div class="main-header">
-          <a class="menu-link-main" href="#" id="All-data">All Notice</a>
-          <div class="header-menu">
-            <a class="main-header-link is-active" href="#">Live</a>
-            <a class="main-header-link" href="#">Completed</a>
-
-          </div>
-        </div>
-        <div class="content-wrapper">
+              <div class="content-wrapper">
 
           <div class="content-section">
             <div class="content-section-title">Ongoing</div>
-            <ul>
-              <li class="adobe-product" id="Worksheet-data">
+            <ul id="wks-ongoing">
+
                 <div class="products">
                   <span id="Subjetc">Advance Internet Programming</span>
                 </div>
@@ -120,14 +112,14 @@
                   <button class="content-button status-button open"><span>7 </span>Days Left</button>
 
                 </div>
-              </li>
+              </li>-->
             </ul>
           </div>
         </div>
       </div>
     </div>
     <div class="overlay-app"></div>
-    <div class="copyright"> &copy; All right Reserved @ImpossibleShadow </div>
+    <div class="copyright"> &copy; All right Reserved. 2022. @Chandigarh University </div>
   </div>
   <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

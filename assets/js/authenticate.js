@@ -35,7 +35,8 @@ function loginCR() {
 
 function loginStudents() {
   var uid = document.getElementById("crUID").value;
-
+  console.log(uid);
+  localStorage.setItem("uid", uid);
   document.location.href = "/Student.html";
 
   return false;

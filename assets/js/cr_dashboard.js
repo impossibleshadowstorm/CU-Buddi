@@ -69,13 +69,15 @@ function getAllTiles(threadType) {
 
     //Date Calculation Start
     const timestamp = element.data()["deadline"].seconds; 
+    const now1=Date.now();
     
-    const now = Math.floor(Date.now()/1000);
-    const diff =now-timestamp;
-    const diffInDays = Math.abs(Math.floor(diff / (24 * 60 * 60 * 1000)));
-    console.log(diffInDays);
+    const now = Math.floor(now1/1000);
+  
+    const diff =timestamp-now;
+    const diffInDays = Math.abs(Math.floor(diff / (24 * 60 * 60 )));
+   
     //Date Calculation End
-
+      
         var child = `<li class="adobe-product" id="Worksheet-data">
     <div class="products">
       <span id="Subject">${element.data()["subject"]}</span>
@@ -107,8 +109,7 @@ function getAllTiles(threadType) {
     
     const now = Math.floor(Date.now()/1000);
     const diff =now-timestamp;
-    const diffInDays = Math.abs(Math.floor(diff / (24 * 60 * 60 * 1000)));
-    console.log(diffInDays);
+    const diffInDays = Math.abs(Math.floor(diff / (24 * 60 * 60 )));
     //Date Calculation End
 
         var child = `<li class="adobe-product" id="Worksheet-data">
@@ -137,8 +138,8 @@ function getAllTiles(threadType) {
     
     const now = Math.floor(Date.now()/1000);
     const diff =now-timestamp;
-    const diffInDays = Math.abs(Math.floor(diff / (24 * 60 * 60 * 1000)));
-    console.log(diffInDays);
+    const diffInDays = Math.abs(Math.floor(diff / (24 * 60 * 60 )));
+   
     //Date Calculation End
 
         var child = `<li class="adobe-product" id="Worksheet-data">
